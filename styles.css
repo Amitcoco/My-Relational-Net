@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #291D35;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+svg#concept-svg {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.link {
+  stroke-width: 1;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+.link.dimmed {
+  opacity: 0.15;
+}
+.link.highlighted {
+  opacity: 1;
+  stroke-width: 7;
+}
+
+.node-group {
+  cursor: pointer;
+}
+
+.node-circle {
+  /* No stroke, no border */
+  filter: drop-shadow(0 2px 12px rgba(180, 120, 200, 0.10));
+  transition: filter 0.3s, opacity 0.3s;
+}
+.node-circle.selected {
+  stroke: #f4a79c;
+  stroke-width: 5px;
+  filter: drop-shadow(0 4px 32px #f4a79c44);
+}
+.node-circle.neighbor {
+  stroke: #dac4e9;
+  stroke-width: 4px;
+}
+.node-circle.dimmed {
+  opacity: 0.25;
+}
+
+.node-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  fill: #fff;
+  pointer-events: none;
+  text-anchor: middle;
+  alignment-baseline: middle;
+  user-select: none;
+}
+
+.legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 10;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.legend-item .line {
+    width: 40px;
+    height: 2px;
+    margin-right: 10px;
+    background: rgba(255,255,255,0.8);
+}
+.legend-item .line.dashed {
+    background: none;
+    border-top: 2px dashed rgba(255,255,255,0.8);
+}
+.legend-item .line.arrowed {
+    background: none;
+    border-top: 1.5px solid rgba(255,255,255,0.8);
+    position: relative;
+}
+.legend-item .line.arrowed::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid rgba(255,255,255,0.8);
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+/* SVG definitions for arrow markers */
+svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+#arrowhead {
+    fill: rgba(255,255,255,0.7);
+} 
