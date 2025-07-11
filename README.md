@@ -1,4 +1,4 @@
-# My Internal Net - Interactive Concept Map
+# My Relational Net - Interactive Concept Map
 
 An interactive 2D concept map that visualizes the interconnected themes from design, animation, interaction, and personal life. Built with visual and emotional logic rather than taxonomic organization.
 
